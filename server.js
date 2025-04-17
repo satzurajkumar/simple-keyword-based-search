@@ -1,4 +1,4 @@
-// server.js
+//Backend implementation of a simple keyword based Full-Text Search
 // Load environment variables from .env file
 const express = require("express");
 const mysql = require("mysql2/promise");
@@ -8,7 +8,7 @@ const app = express();
 const port = process.env.PORT || 3001;
 
 // --- Database Connection Pool ---
-// Using a pool is recommended for managing connections efficiently
+// Using a pool is for managing connections efficiently
 const pool = mysql.createPool({
 	host: process.env.DB_HOST,
 	user: process.env.DB_USER,
@@ -98,5 +98,5 @@ app.get("/", (req, res) => {
 
 // --- Start Server ---
 app.listen(port, () => {
-	console.log(`Server listening at http://localhost:${port}`);
+	console.log(`Server listening at port no:${port}`);
 });
